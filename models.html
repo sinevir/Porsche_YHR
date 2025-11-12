@@ -1,79 +1,96 @@
 <!DOCTYPE html>
 <html lang="cs">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Porsche Modely</title>
-  <link rel="stylesheet" href="./css/models.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@300&display=swap" rel="stylesheet">
-</head>
-<body>
-  
-  <header> 
-    <a href="/index.html">
-      <img src=" ./images/logo.svg" alt="">
-      Porsche
-    </a>
-    
-    <ul>
-      <li><a href="/index.html">Main</a> </li>
-      <li><a href="/history.html">History</a> </li>
-      <li><a href="/models.html">Models</a> </li>
-      <li><a href="/motorsports.html">Motorsports</a> </li>
-      <li><a href="">Gallery</a> </li>
-    </ul>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Porsche Modely</title>
+    <link rel="stylesheet" href="./css/models.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="./index.html">
+        <img src=" ./images/logo.svg" alt="" />
+        Porsche
+      </a>
 
-  <main>
-    <h1>Modely Porsche</h1>
+      <ul>
+        <li><a href="./index.html">Main</a></li>
+        <li><a href="./history.html">History</a></li>
+        <li><a href="./models.html">Models</a></li>
+        <li><a href="./motorsports.html">Motorsports</a></li>
+        <li><a href="">Gallery</a></li>
+      </ul>
+    </header>
 
-    <div class="models-grid">
-    <div class="model-card" data-image="911.jpg">
-        <h3>911</h3>
-        <p>Ikona výkonu, elegance a tradice. 911 je srdcem značky Porsche od roku 1963.</p>
-    </div>
+    <main>
+      <h1>Modely Porsche</h1>
 
-    <div class="model-card" data-image="taycan.jpg">
-        <h3>Taycan</h3>
-        <p>Plně elektrický sportovní vůz, který spojuje sílu, luxus a udržitelnost.</p>
-    </div>
+      <div class="models-grid">
+        <div class="model-card" data-image="911.jpg">
+          <h3>911</h3>
+          <p>
+            Ikona výkonu, elegance a tradice. 911 je srdcem značky Porsche od
+            roku 1963.
+          </p>
+        </div>
 
-    <div class="model-card" data-image="718.jpg">
-        <h3>718</h3>
-        <p>Čistý sportovní zážitek v kompaktní podobě. Cayman a Boxster ztělesňují radost z jízdy.</p>
-    </div>
+        <div class="model-card" data-image="taycan.jpg">
+          <h3>Taycan</h3>
+          <p>
+            Plně elektrický sportovní vůz, který spojuje sílu, luxus a
+            udržitelnost.
+          </p>
+        </div>
 
-    <div class="model-card" data-image="panamera.jpg">
-        <h3>Panamera</h3>
-        <p>Kombinace komfortu a výkonu ve čtyřdveřovém provedení. Styl a síla bez kompromisů.</p>
-    </div>
+        <div class="model-card" data-image="718.jpg">
+          <h3>718</h3>
+          <p>
+            Čistý sportovní zážitek v kompaktní podobě. Cayman a Boxster
+            ztělesňují radost z jízdy.
+          </p>
+        </div>
 
-    <div class="model-card" data-image="cayenne.jpg">
-        <h3>Cayenne</h3>
-        <p>Luxusní SUV, které nabízí výkon supersportu. Síla, prostor a autorita na každé cestě.</p>
-    </div>
+        <div class="model-card" data-image="panamera.jpg">
+          <h3>Panamera</h3>
+          <p>
+            Kombinace komfortu a výkonu ve čtyřdveřovém provedení. Styl a síla
+            bez kompromisů.
+          </p>
+        </div>
 
-    <div class="model-card" data-image="macan.jpg">
-        <h3>Macan</h3>
-        <p>Kompaktní SUV pro ty, kdo chtějí agilitu, styl a opravdový sportovní charakter.</p>
-    </div>
-    </div>
+        <div class="model-card" data-image="cayenne.jpg">
+          <h3>Cayenne</h3>
+          <p>
+            Luxusní SUV, které nabízí výkon supersportu. Síla, prostor a
+            autorita na každé cestě.
+          </p>
+        </div>
 
-    <a href="index.html" class="models-btn">Zpět na hlavní stránku</a>
-  </main>
+        <div class="model-card" data-image="macan.jpg">
+          <h3>Macan</h3>
+          <p>
+            Kompaktní SUV pro ty, kdo chtějí agilitu, styl a opravdový sportovní
+            charakter.
+          </p>
+        </div>
+      </div>
+
+      <a href="index.html" class="models-btn">Zpět na hlavní stránku</a>
+    </main>
 
     <!-- ФУТЕР -->
-  <footer>
-      Futer
-  </footer>
-  
-</body>
+    <footer>Futer</footer>
+  </body>
 </html>
 
 <script>
   const cards = document.querySelectorAll('.model-card');
 
-  cards.forEach(card => {
+  cards.forEach((card) => {
     const image = card.getAttribute('data-image');
     card.style.setProperty('--bg-image', `url(${image})`);
     card.addEventListener('mouseenter', () => {
