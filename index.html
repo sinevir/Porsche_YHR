@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Porsche Culture</title>
+  <link rel="stylesheet" href="./css//Porschecss.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ШАПКА -->
+  <header>
+
+    <!-- навігація на інші сторінки-->
+    <nav>
+      <a href="/index.html">
+        <img src=" ./images/logo.svg" alt="Logo Porsche">
+        Porsche
+      </a>
+      
+      <ul>
+        <li><a href="/index.html">Main</a> </li>
+        <li><a href="/history.html">History</a> </li>
+        <li><a href="/models.html">Models</a> </li>
+        <li><a href="/motorsports.html">Motorsports</a> </li>
+        <li><a href="">Gallery</a> </li>
+      </ul>
+    </nav>
+
+    <!-- Реєстрація, спливаючі вікна-->
+    <ul>
+      <li><a href="">Log In</a></li>
+      <li><a href="">Registration</a></li>
+    </ul>
+
+  </header>
+
+  <main>
+      <!-- HERO -->
+    <section class="hero">
+      <video muted playsinline autoplay id="intro-video" class="background-video">
+        <source src="./images/porscheheadlights.mp4" type="video/mp4">
+          Ваш браузер не підтримує відео.
+      </video>
+
+      <div class="hero-content">
+        <h1 class="fade-text" id="title">Porsche</h1>
+        <p class="fade-text" id="subtitle">More Than A Car.</p>
+      </div>
+    </section>
+
+    <!-- навігація на інші сторінки-->
+    <section class="poem">
+      <p>Porsche is not only a car</p>
+      <p>it's a heartwarming dream</p>
+      <p>of our inner child</p>
+      <p>a spark, that never went off.</p>
+    </section>
+    
+    <div class="history-bg">
+      <img src="./images/porschehistory.jpg" alt="Porsche History Background">
+    </div>
+
+    <a href="models.html" class="models-btn">Zobrazit modely</a>
+  </main>
+
+  <!-- ФУТЕР -->
+  <footer>
+    Futer
+  </footer>
+
+</body>
+
+</html>
+
+<script>
+  const video = document.getElementById('intro-video');
+  const title = document.getElementById('title');
+  const subtitle = document.getElementById('subtitle');
+
+  setTimeout(() => {
+    video.play();
+  }, 2000);
+
+  setTimeout(() => {
+    title.style.opacity = "1";
+  }, 1000);
+
+  setTimeout(() => {
+    subtitle.style.opacity = "1";
+  }, 4000);
+</script>
+<script>
+  const poem = document.querySelector('.poem');
+  const history = document.querySelector('.history');
+  const bg = document.querySelector('.history-bg');
+
+  window.addEventListener('scroll', () => {
+    const poemBottom = poem.getBoundingClientRect().bottom;
+    const historyBottom = history.getBoundingClientRect().bottom;
+    const windowHeight = window.innerHeight;
+
+    // коли користувач проходить поему — показуємо фон
+    if (poemBottom < windowHeight * 0.2 && historyBottom > windowHeight * 0.1) {
+      bg.classList.add('visible');
+    } else {
+      bg.classList.remove('visible');
+    }
+  });
+</script>

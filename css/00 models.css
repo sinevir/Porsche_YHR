@@ -1,0 +1,90 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 50px;
+  max-width: 1400px;
+  margin: 80px auto;
+  padding: 0 40px;
+  position: relative;
+}
+
+.model-card {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  padding: 50px 30px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.model-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;               
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;            
+  transition: opacity 0.6s ease; 
+  z-index: 0;
+}
+
+.model-card:hover::after {
+  opacity: 0.35;         
+}
+
+.model-card h3,
+.model-card p {
+  position: relative;
+  z-index: 2;
+}
+
+.model-card:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-8px);
+}
+
+.model-card h3 {
+  font-size: 26px;
+  margin-bottom: 16px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.model-card p {
+  font-size: 17px;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.models-btn {
+  margin-top: 60px;
+  padding: 16px 42px;
+  font-size: 18px;
+  background: transparent;
+  color: white;
+  border: 1.5px solid white;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.models-btn:hover {
+  background-color: white;
+  color: black;
+}
